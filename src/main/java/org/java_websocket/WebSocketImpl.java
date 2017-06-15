@@ -649,6 +649,10 @@ public class WebSocketImpl implements WebSocket {
 		return !this.outQueue.isEmpty();
 	}
 
+	public int getBufferentDataChunkCount() {
+		return this.outQueue.size();
+	}
+
 	private HandshakeState isFlashEdgeCase( ByteBuffer request ) throws IncompleteHandshakeException {
 		request.mark();
 		if( request.limit() > Draft.FLASH_POLICY_REQUEST.length ) {
